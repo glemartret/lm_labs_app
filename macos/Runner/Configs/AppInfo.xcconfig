@@ -8,7 +8,7 @@
 PRODUCT_NAME = lm_labs_app
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.lemartret.lmApp
+PRODUCT_BUNDLE_IDENTIFIER = com.lemartret.lmLabsApp
 
 // The copyright displayed in application information
 PRODUCT_COPYRIGHT = Copyright © 2023 com.lemartret. All rights reserved.
