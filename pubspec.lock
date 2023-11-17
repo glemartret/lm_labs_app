@@ -41,6 +41,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.18.0"
+  extreme_flutter_lints:
+    dependency: "direct dev"
+    description:
+      path: "."
+      ref: "v0.0.2"
+      resolved-ref: "704314fe6bd2f4ffd6a5f306fb4915162a241346"
+      url: "git@github.com:glemartret/extreme_flutter_lints.git"
+    source: git
+    version: "0.0.2"
   fake_async:
     dependency: transitive
     description:
@@ -55,7 +64,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_lints:
-    dependency: "direct dev"
+    dependency: transitive
     description:
       name: flutter_lints
       sha256: a25a15ebbdfc33ab1cd26c63a6ee519df92338a9c10f122adda92938253bef04

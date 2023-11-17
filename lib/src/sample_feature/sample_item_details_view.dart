@@ -7,8 +7,7 @@ class SampleItemDetailsView extends StatelessWidget {
   static const routeName = '/sample_item';
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+  Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(
         title: const Text('Item Details'),
       ),
@@ -16,5 +15,4 @@ class SampleItemDetailsView extends StatelessWidget {
         child: Text('More Information Here'),
       ),
     );
-  }
 }
