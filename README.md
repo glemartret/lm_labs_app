@@ -1,4 +1,4 @@
-# lm_app
+# lm_labs_app
 
 A new Flutter project.
 

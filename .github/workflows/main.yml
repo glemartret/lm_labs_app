@@ -1,0 +1,13 @@
+name: Create Tag
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: peiffer-innovations/actions-dart-version-autotag@v1
+        with:
+          token: ${{ secrets.TAG_TOKEN }}

@@ -1,6 +1,6 @@
 {
-    "name": "lm_app",
-    "short_name": "lm_app",
+    "name": "lm_labs_app",
+    "short_name": "lm_labs_app",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

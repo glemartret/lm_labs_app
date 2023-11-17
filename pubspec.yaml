@@ -1,4 +1,4 @@
-name: lm_app
+name: lm_labs_app
 description: "A new Flutter project."
 
 # Prevent accidental publishing to pub.dev.
