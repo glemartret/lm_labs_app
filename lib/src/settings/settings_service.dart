@@ -1,8 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+part 'settings_service.g.dart';
 
 // final settingsServiceProvider = Provider(
 //   (ref) => SettingsService(
@@ -13,10 +15,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 // final sharedPreferencesProvider = Provider<SharedPreferences>((ref) {
 //   throw UnimplementedError();
 // });
-
-final themeModeProvider = StateNotifierProvider<ThemeModeNotifier, ThemeMode>(
-  (ref) => ThemeModeNotifier(),
-);
 
 // /// A service that stores and retrieves user settings.
 // ///
@@ -39,16 +37,16 @@ final themeModeProvider = StateNotifierProvider<ThemeModeNotifier, ThemeMode>(
 //       sharedPreferences.setInt('themeMode', theme?.index ?? 0);
 // }
 
-class ThemeModeNotifier extends StateNotifier<ThemeMode> {
+@riverpod
+class ThemeModeNotifier extends _$ThemeModeNotifier {
   late SharedPreferences prefs;
-
-  ThemeModeNotifier() : super(ThemeMode.system) {
+  @override
+  ThemeMode build() {
     unawaited(_init());
+    return ThemeMode.system;
   }
 
-  ThemeMode get themeMode => state;
-
-  set themeMode(ThemeMode mode) {
+  void set(ThemeMode mode) {
     state = mode;
     unawaited(prefs.setInt('themeMode', mode.index));
   }
