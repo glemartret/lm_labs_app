@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:i18n_extension/i18n_widget.dart';
 import 'package:lm_labs_app/src/features/sample_feature/presentation/sample_item_details_view.dart';
 import 'package:lm_labs_app/src/features/sample_feature/presentation/sample_item_list_view.dart';
 import 'package:lm_labs_app/src/features/settings/application/settings_service.dart';
@@ -33,21 +33,16 @@ class MyApp extends ConsumerWidget {
       // allows descendant Widgets to display the correct translations
       // depending on the user's locale.
       localizationsDelegates: const [
-        AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: const [
         Locale('en', ''), // English, no country code
+        Locale('fr', ''), // French, no country code
       ],
 
-      // Use AppLocalizations to configure the correct application title
-      // depending on the user's locale.
-      //
-      // The appTitle is defined in .arb files found in the localization
-      // directory.
-      onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,
+      title: 'LM Labs App',
 
       // Define a light and dark color theme. Then, read the user's
       // preferred ThemeMode (light, dark, or system default) from the
@@ -71,6 +66,9 @@ class MyApp extends ConsumerWidget {
               return const SampleItemListView();
           }
         },
+      ),
+      builder: (context, child) => I18n(
+        child: child!,
       ),
     );
   }

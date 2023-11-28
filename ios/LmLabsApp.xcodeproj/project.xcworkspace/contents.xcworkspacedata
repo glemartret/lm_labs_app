@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Runner.xcodeproj">
+      location = "self:/Users/glemartret/perso/lm_labs_app/ios/LmLabsApp.xcodeproj">
    </FileRef>
 </Workspace>

@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:lm_labs_app/src/features/sample_feature/domain/sample_item.dart';
+import 'package:lm_labs_app/src/features/sample_feature/presentation/sample_feature.i18n.dart';
 import 'package:lm_labs_app/src/features/sample_feature/presentation/sample_item_details_view.dart';
 import 'package:lm_labs_app/src/features/settings/presentation/settings_view.dart';
 
@@ -18,7 +19,7 @@ class SampleItemListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: const Text('Sample Items'),
+          title: Text('Sample Items'.i18n),
           actions: [
             IconButton(
               icon: const Icon(Icons.settings),
@@ -48,7 +49,9 @@ class SampleItemListView extends StatelessWidget {
             final item = items[index];
 
             return ListTile(
-              title: Text('SampleItem ${item.id}'),
+              title: Text('Sample Item %d'.fill([
+                item.id,
+              ])),
               leading: const CircleAvatar(
                 // Display the Flutter Logo image asset.
                 foregroundImage: AssetImage('assets/images/flutter_logo.png'),

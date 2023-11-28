@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:lm_labs_app/src/features/settings/application/settings_service.dart';
+import 'package:lm_labs_app/src/features/settings/presentation/settings.i18n.dart';
 
 /// Displays the various settings that can be customized by the user.
 ///
@@ -17,7 +18,7 @@ class SettingsView extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Settings'),
+        title: Text('Settings'.i18n),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
@@ -33,18 +34,18 @@ class SettingsView extends ConsumerWidget {
           onChanged: (mode) async => ref
               .read(themeModeNotifierProvider.notifier)
               .update(mode ?? ThemeMode.system),
-          items: const [
+          items: [
             DropdownMenuItem(
               value: ThemeMode.system,
-              child: Text('System Theme'),
+              child: Text('System Theme'.i18n),
             ),
             DropdownMenuItem(
               value: ThemeMode.light,
-              child: Text('Light Theme'),
+              child: Text('Light Theme'.i18n),
             ),
             DropdownMenuItem(
               value: ThemeMode.dark,
-              child: Text('Dark Theme'),
+              child: Text('Dark Theme'.i18n),
             ),
           ],
         ),
