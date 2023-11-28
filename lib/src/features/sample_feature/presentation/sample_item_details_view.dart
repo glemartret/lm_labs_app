@@ -5,15 +5,13 @@ import 'package:lm_labs_app/src/features/sample_feature/presentation/sample_feat
 class SampleItemDetailsView extends StatelessWidget {
   const SampleItemDetailsView({super.key});
 
-  static const routeName = '/sample_item';
-
   @override
   Widget build(BuildContext context) => Scaffold(
-      appBar: AppBar(
-        title: Text('Item Details'.i18n),
-      ),
-      body: Center(
-        child: Text('More Information Here'.i18n),
-      ),
-    );
+        appBar: AppBar(
+          title: Text('Item Details'.i18n),
+        ),
+        body: Center(
+          child: Text('More Information Here'.i18n),
+        ),
+      );
 }

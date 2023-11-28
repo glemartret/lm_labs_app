@@ -8,8 +8,6 @@ import 'package:lm_labs_app/src/features/settings/presentation/settings.i18n.dar
 /// When a user changes a setting, the SettingsController is updated and
 /// Widgets that listen to the SettingsController are rebuilt.
 class SettingsView extends ConsumerWidget {
-  static const routeName = '/settings';
-
   const SettingsView({super.key});
 
   @override
