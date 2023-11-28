@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:lm_labs_app/src/settings/settings_service.dart';
+import 'package:lm_labs_app/src/features/settings/application/settings_service.dart';
 
 /// Displays the various settings that can be customized by the user.
 ///
@@ -30,9 +30,9 @@ class SettingsView extends ConsumerWidget {
           value: themeMode,
           // Call the updateThemeMode method any time the
           // user selects a theme.
-          onChanged: (mode) => ref
+          onChanged: (mode) async => ref
               .read(themeModeNotifierProvider.notifier)
-              .set(mode ?? ThemeMode.system),
+              .update(mode ?? ThemeMode.system),
           items: const [
             DropdownMenuItem(
               value: ThemeMode.system,

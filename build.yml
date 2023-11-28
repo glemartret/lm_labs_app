@@ -1,0 +1,23 @@
+targets:
+  $default:
+    builders:
+      freezed:
+        generate_for:
+          include:
+            - "src/**/domain/**.dart"
+
+      json_serializable:
+        generate_for:
+          include:
+            - "src/**/domain/**.dart"
+
+      riverpod_generator:
+        generate_for:
+          include:
+            - "src/**/application/**.dart"
+            - "src/**/data/**.dart"
+
+      go_router_builder:
+        generate_for:
+          include:
+            - "src/routing/**.dart"

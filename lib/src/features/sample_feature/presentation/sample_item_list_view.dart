@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:lm_labs_app/src/sample_feature/sample_item.dart';
-import 'package:lm_labs_app/src/sample_feature/sample_item_details_view.dart';
-import 'package:lm_labs_app/src/settings/settings_view.dart';
+import 'package:lm_labs_app/src/features/sample_feature/domain/sample_item.dart';
+import 'package:lm_labs_app/src/features/sample_feature/presentation/sample_item_details_view.dart';
+import 'package:lm_labs_app/src/features/settings/presentation/settings_view.dart';
 
 /// Displays a list of SampleItems.
 class SampleItemListView extends StatelessWidget {

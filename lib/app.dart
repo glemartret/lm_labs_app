@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:lm_labs_app/src/sample_feature/sample_item_details_view.dart';
-import 'package:lm_labs_app/src/sample_feature/sample_item_list_view.dart';
-import 'package:lm_labs_app/src/settings/settings_service.dart';
-import 'package:lm_labs_app/src/settings/settings_view.dart';
+import 'package:lm_labs_app/src/features/sample_feature/presentation/sample_item_details_view.dart';
+import 'package:lm_labs_app/src/features/sample_feature/presentation/sample_item_list_view.dart';
+import 'package:lm_labs_app/src/features/settings/application/settings_service.dart';
+import 'package:lm_labs_app/src/features/settings/presentation/settings_view.dart';
 
 /// The Widget that configures your application.
 class MyApp extends ConsumerWidget {
