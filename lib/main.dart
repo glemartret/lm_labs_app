@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:lm_labs_app/app.dart';
-import 'package:lm_labs_app/src/features/settings/application/settings_service.dart';
+import 'package:lm_labs_app/src/features/shared_preferences/application/shared_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

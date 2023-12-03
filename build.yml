@@ -4,20 +4,20 @@ targets:
       freezed:
         generate_for:
           include:
-            - "src/**/domain/**.dart"
+            - "lib/src/**/domain/**.dart"
 
       json_serializable:
         generate_for:
           include:
-            - "src/**/domain/**.dart"
+            - "lib/src/**/domain/**.dart"
 
       riverpod_generator:
         generate_for:
           include:
-            - "src/**/application/**.dart"
-            - "src/**/data/**.dart"
+            - "lib/src/**/application/**.dart"
+            - "lib/src/**/data/**.dart"
 
       go_router_builder:
         generate_for:
           include:
-            - "src/routing/**.dart"
+            - "lib/src/routing/**.dart"

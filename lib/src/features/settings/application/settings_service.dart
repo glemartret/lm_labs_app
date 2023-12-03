@@ -1,27 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:lm_labs_app/src/features/shared_preferences/application/shared_preferences.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 part 'settings_service.g.dart';
-
-@Riverpod(
-  keepAlive: true,
-)
-Future<SharedPreferences> asyncSharedPreferences(
-  AsyncSharedPreferencesRef ref,
-) =>
-    SharedPreferences.getInstance();
-
-// @riverpod
-// SettingsService settingsService(SettingsServiceRef ref) => SettingsService(
-//       ref.watch(sharedPreferencesProvider),
-//     );
-
-@riverpod
-SharedPreferences sharedPreferences(SharedPreferencesRef ref) =>
-    ref.watch(asyncSharedPreferencesProvider).requireValue;
 
 /// A service that stores and retrieves user settings.
 ///

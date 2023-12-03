@@ -6,8 +6,8 @@ import 'package:lm_labs_app/src/localization/i18n.dart';
 extension SampleFeatureLocalization on String {
   static final _t = Translations('en') +
       {
-        'en': 'Item Details',
-        'fr': "Détails de l'article",
+        'en': 'Item Details %d',
+        'fr': "Détails de l'article %d",
       } +
       {
         'en': 'More Information Here',
