@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:lm_labs_app/src/features/sample_feature/domain/sample_item.dart';
 import 'package:lm_labs_app/src/features/sample_feature/presentation/sample_feature.i18n.dart';
-import 'package:lm_labs_app/src/routing/router.dart';
 import 'package:lm_labs_app/src/routing/routes.dart';
 
 /// Displays a list of SampleItems.
@@ -12,24 +11,17 @@ class SampleItemListView extends ConsumerWidget {
 
   const SampleItemListView({
     super.key,
-    this.items = const [SampleItem(1), SampleItem(2), SampleItem(3)],
+    this.items = const [
+      SampleItem(1),
+      SampleItem(2),
+      SampleItem(3),
+    ],
   });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) => Scaffold(
         appBar: AppBar(
           title: Text('Sample Items'.i18n),
-          actions: [
-            IconButton(
-              icon: const Icon(Icons.settings),
-              onPressed: () async {
-                // Navigate to the settings page. If the user leaves and returns
-                // to the app after it has been killed while running in the
-                // background, the navigation stack is restored.
-                await ref.router.push(const SettingsRoute().location);
-              },
-            ),
-          ],
         ),
 
         // To work with lists that may contain a large number of items,
@@ -61,7 +53,11 @@ class SampleItemListView extends ConsumerWidget {
                 // Navigate to the details page. If the user leaves and returns
                 // to the app after it has been killed while running in the
                 // background, the navigation stack is restored.
-                await ref.router.push(const SampleItemDetailsRoute().location);
+                await ref.router.push(
+                  SampleItemDetailsRoute(
+                    item.id,
+                  ).location,
+                );
               },
             );
           },

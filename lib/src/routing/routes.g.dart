@@ -7,22 +7,44 @@ part of 'routes.dart';
 // **************************************************************************
 
 List<RouteBase> get $appRoutes => [
-      $sampleItemDetailsRoute,
+      $counterRoute,
+      $homeRoute,
       $sampleItemListRoute,
       $settingsRoute,
     ];
 
-RouteBase get $sampleItemDetailsRoute => GoRouteData.$route(
-      path: '/sample_item',
-      factory: $SampleItemDetailsRouteExtension._fromState,
+RouteBase get $counterRoute => GoRouteData.$route(
+      path: '/counter',
+      factory: $CounterRouteExtension._fromState,
     );
 
-extension $SampleItemDetailsRouteExtension on SampleItemDetailsRoute {
-  static SampleItemDetailsRoute _fromState(GoRouterState state) =>
-      const SampleItemDetailsRoute();
+extension $CounterRouteExtension on CounterRoute {
+  static CounterRoute _fromState(GoRouterState state) => const CounterRoute();
 
   String get location => GoRouteData.$location(
-        '/sample_item',
+        '/counter',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+RouteBase get $homeRoute => GoRouteData.$route(
+      path: '/',
+      factory: $HomeRouteExtension._fromState,
+    );
+
+extension $HomeRouteExtension on HomeRoute {
+  static HomeRoute _fromState(GoRouterState state) => const HomeRoute();
+
+  String get location => GoRouteData.$location(
+        '/',
       );
 
   void go(BuildContext context) => context.go(location);
@@ -36,8 +58,14 @@ extension $SampleItemDetailsRouteExtension on SampleItemDetailsRoute {
 }
 
 RouteBase get $sampleItemListRoute => GoRouteData.$route(
-      path: '/',
+      path: '/sample_items',
       factory: $SampleItemListRouteExtension._fromState,
+      routes: [
+        GoRouteData.$route(
+          path: ':id',
+          factory: $SampleItemDetailsRouteExtension._fromState,
+        ),
+      ],
     );
 
 extension $SampleItemListRouteExtension on SampleItemListRoute {
@@ -45,7 +73,27 @@ extension $SampleItemListRouteExtension on SampleItemListRoute {
       const SampleItemListRoute();
 
   String get location => GoRouteData.$location(
-        '/',
+        '/sample_items',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $SampleItemDetailsRouteExtension on SampleItemDetailsRoute {
+  static SampleItemDetailsRoute _fromState(GoRouterState state) =>
+      SampleItemDetailsRoute(
+        int.parse(state.pathParameters['id']!),
+      );
+
+  String get location => GoRouteData.$location(
+        '/sample_items/${Uri.encodeComponent(id.toString())}',
       );
 
   void go(BuildContext context) => context.go(location);

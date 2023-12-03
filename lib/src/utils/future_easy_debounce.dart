@@ -1,0 +1,106 @@
+import 'dart:async';
+
+import 'package:lm_labs_app/src/utils/extensions/completer_extension.dart';
+
+/// A void callback, i.e. (){}, so we don't need to import e.g. `dart.ui`
+/// just for the VoidCallback type definition.
+typedef FutureFutureEasyDebounceCallback = Future<void> Function();
+
+/// A static class for handling method call debouncing.
+class FutureEasyDebounce {
+  static final Map<String, _FutureEasyDebounceOperation> _operations = {};
+  static final Map<String, Completer> _completers = {};
+
+  /// Cancels any active debounce operation with the given [tag].
+  static void cancel(String tag) {
+    _operations[tag]?.timer.cancel();
+    _operations.remove(tag);
+
+    _completers[tag]?.completeIfNotCompleted();
+    _completers.remove(tag);
+  }
+
+  /// Cancels all active debouncers.
+  static void cancelAll() {
+    for (final operation in _operations.values) {
+      operation.timer.cancel();
+    }
+    _operations.clear();
+
+    for (final completer in _completers.values) {
+      completer.completeIfNotCompleted();
+    }
+    _completers.clear();
+  }
+
+  /// Returns the number of active debouncers (debouncers that haven't yet
+  /// called their onExecute methods).
+  static int count() => _operations.length;
+
+  /// Will delay the execution of [onExecute] with the given [duration].
+  /// If another call to debounce() with the same [tag] happens within
+  /// this duration, the first call will be cancelled and the debouncer
+  /// will start waiting for another [duration] before executing [onExecute].
+  ///
+  /// [tag] is any arbitrary String, and is used to identify this particular
+  /// debounce operation in subsequent calls to [debounce()] or [cancel()].
+  ///
+  /// If [duration] is `Duration.zero`, [onExecute] will be executed
+  /// immediately, i.e. synchronously.
+  static Future<void> debounce(
+    String tag,
+    Duration duration,
+    FutureFutureEasyDebounceCallback onExecute,
+  ) {
+    _completers[tag] ??= Completer();
+
+    if (duration == Duration.zero) {
+      _operations[tag]?.timer.cancel();
+      _operations.remove(tag);
+
+      onExecute().then((_) {
+        _completers[tag]?.completeIfNotCompleted();
+        _completers.remove(tag);
+      });
+    } else {
+      _operations[tag]?.timer.cancel();
+
+      _operations[tag] = _FutureEasyDebounceOperation(
+        onExecute,
+        Timer(duration, () {
+          _operations[tag]?.timer.cancel();
+          _operations.remove(tag);
+
+          onExecute().then((_) {
+            _completers[tag]?.completeIfNotCompleted();
+            _completers.remove(tag);
+          });
+        }),
+      );
+    }
+
+    return _completers[tag]?.future ?? Future.value();
+  }
+
+  /// Fires the callback associated with [tag] immediately. This does not
+  /// cancel the debounce timer, so if you want to invoke the callback and
+  /// cancel the debounce timer, you must first call `fire(tag)` and
+  /// then `cancel(tag)`.
+  static Future<void> fire(String tag) {
+    _completers[tag] ??= Completer();
+
+    _operations[tag]?.callback().then((_) {
+      _completers[tag]?.completeIfNotCompleted();
+      _completers.remove(tag);
+    });
+
+    return _completers[tag]?.future ?? Future.value();
+  }
+}
+
+class _FutureEasyDebounceOperation {
+  FutureFutureEasyDebounceCallback callback;
+  Timer timer;
+
+  _FutureEasyDebounceOperation(this.callback, this.timer);
+}

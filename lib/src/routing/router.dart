@@ -12,7 +12,7 @@ GoRouter router(RouterRef ref) {
 
   final router = GoRouter(
     navigatorKey: routerKey,
-    initialLocation: const SampleItemListRoute().location,
+    initialLocation: const HomeRoute().location,
     debugLogDiagnostics: true,
     routes: $appRoutes,
   );
