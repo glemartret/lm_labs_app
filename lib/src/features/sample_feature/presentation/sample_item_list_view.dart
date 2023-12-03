@@ -12,9 +12,9 @@ class SampleItemListView extends ConsumerWidget {
   const SampleItemListView({
     super.key,
     this.items = const [
-      SampleItem(1),
-      SampleItem(2),
-      SampleItem(3),
+      SampleItem(id: 1),
+      SampleItem(id: 2),
+      SampleItem(id: 3),
     ],
   });
 

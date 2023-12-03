@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lm_labs_app/src/features/counter/presentation/counter_view.dart';
 import 'package:lm_labs_app/src/features/home/presentation/home_view.dart';
+import 'package:lm_labs_app/src/features/jokes/presentation/jokes_view.dart';
 import 'package:lm_labs_app/src/features/sample_feature/presentation/sample_item_details_view.dart';
 import 'package:lm_labs_app/src/features/sample_feature/presentation/sample_item_list_view.dart';
 import 'package:lm_labs_app/src/features/settings/presentation/settings_view.dart';
@@ -25,6 +26,14 @@ class HomeRoute extends GoRouteData {
 
   @override
   Widget build(BuildContext context, GoRouterState state) => const HomeView();
+}
+
+@TypedGoRoute<JokesRoute>(path: '/jokes')
+class JokesRoute extends GoRouteData {
+  const JokesRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) => const JokesView();
 }
 
 class SampleItemDetailsRoute extends GoRouteData {
