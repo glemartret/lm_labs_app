@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:i18n_extension/i18n_widget.dart';
+import 'package:lm_labs_app/src/constants/intents.dart';
 import 'package:lm_labs_app/src/features/settings/application/settings_service.dart';
 import 'package:lm_labs_app/src/routing/router.dart';
 
@@ -53,6 +55,24 @@ class MyApp extends ConsumerWidget {
       // Define a function to handle named routes in order to support
       // Flutter web url navigation and deep linking.
       routerConfig: router,
+
+      shortcuts: {
+        ...WidgetsApp.defaultShortcuts.map(
+          (key, value) => MapEntry(
+            LogicalKeySet.fromSet(key.triggers?.toSet() ?? {}),
+            value,
+          ),
+        ),
+        LogicalKeySet(
+          LogicalKeyboardKey.keyW,
+          LogicalKeyboardKey.control,
+          LogicalKeyboardKey.shift,
+        ): const CloseAppIntent(),
+      },
+      actions: {
+        ...WidgetsApp.defaultActions,
+        CloseAppIntent: CloseAppAction(),
+      },
 
       builder: (context, child) => I18n(
         child: child!,

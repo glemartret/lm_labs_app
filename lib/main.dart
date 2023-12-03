@@ -7,7 +7,10 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   final container = ProviderContainer();
-  await container.read(asyncSharedPreferencesProvider.future);
+
+  await Future.wait([
+    container.read(asyncSharedPreferencesProvider.future),
+  ]);
 
   runApp(
     UncontrolledProviderScope(
