@@ -28,6 +28,7 @@ dev_dependencies:
     git:
       url: git@github.com:glemartret/extreme_flutter_lints.git
       ref: v0.0.3
+  flutter_native_splash: ^2.3.6
   flutter_test:
     sdk: flutter
   go_router_builder: ^2.3.4
@@ -40,3 +41,12 @@ flutter:
   assets:
     # Add assets from the images directory to the application.
     - assets/images/
+
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/images/flutter_logo.png
+  android_12:
+    color: "#ffffff"
+    image: assets/images/flutter_logo.png
+  info_plist_files:
+    - 'ios/LmLabsApp/Info.plist'
