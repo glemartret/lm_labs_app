@@ -23,6 +23,10 @@ dependencies:
   hooks_riverpod: ^2.4.9
   i18n_extension: ^10.0.1
   json_annotation: ^4.8.1
+  lm_labs_utils:
+    git:
+      url: git@github.com:glemartret/lm_labs_utils.git
+      ref: v1.0.0+1
   riverpod_annotation: ^2.3.3
   shared_preferences: ^2.2.2
 
@@ -41,6 +45,10 @@ dev_dependencies:
   json_serializable: ^6.7.1
   riverpod_generator: ^2.3.9
   riverpod_lint: ^2.3.7
+
+dependency_overrides:
+  # lm_labs_utils:
+  #   path: ./packages/lm_labs_utils
 
 flutter:
   uses-material-design: true

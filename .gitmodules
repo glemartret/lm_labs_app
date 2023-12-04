@@ -1,0 +1,3 @@
+[submodule "packages/lm_labs_utils"]
+	path = packages/lm_labs_utils
+	url = git@github.com:glemartret/lm_labs_utils.git

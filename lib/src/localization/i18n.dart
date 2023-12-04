@@ -2,7 +2,7 @@ import 'package:i18n_extension/i18n_extension.dart';
 // ignore_for_file: lines_longer_than_80_chars
 
 // Search Strings without .i18n '(?!\.i18n)[\n\w\d\s.]*?'(?!\.i18n)(?!\n\.i18n)
-extension LmLabsLocalization on String {
+extension LmLabsAppLocalization on String {
   static final _t = Translations('en') +
       {
         'en': 'Refresh',

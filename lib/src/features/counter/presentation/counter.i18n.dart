@@ -38,7 +38,8 @@ extension CounterLocalization on String {
         'fr': '',
       };
 
-  static Translations get translations => LmLabsLocalization.translations * _t;
+  static Translations get translations =>
+      LmLabsAppLocalization.translations * _t;
 
   String get i18n => localize(this, translations);
   String fill(List<Object> params) => localizeFill(i18n, params);

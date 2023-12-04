@@ -542,6 +542,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.0"
+  lm_labs_utils:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: "v1.0.0+1"
+      resolved-ref: d37d8001c110f46ed6c52962efe68addd47f652a
+      url: "git@github.com:glemartret/lm_labs_utils.git"
+    source: git
+    version: "1.0.0+1"
   logging:
     dependency: transitive
     description:

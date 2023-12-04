@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:lm_labs_app/src/common_widgets/async_value_widget.dart';
 import 'package:lm_labs_app/src/features/jokes/data/jokes_repository.dart';
 import 'package:lm_labs_app/src/features/jokes/presentation/jokes.i18n.dart';
+import 'package:lm_labs_utils/widgets.dart';
 
 class JokesView extends ConsumerWidget {
   const JokesView({super.key});

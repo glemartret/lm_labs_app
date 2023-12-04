@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:lm_labs_app/src/features/jokes/domain/joke.dart';
-import 'package:lm_labs_app/src/utils/http_client/cancel_token_ref.dart';
-import 'package:lm_labs_app/src/utils/http_client/dio_provider.dart';
+import 'package:lm_labs_utils/utils.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'jokes_repository.g.dart';

@@ -26,7 +26,7 @@ extension HomeLocalization on String {
       };
 
   static Translations get translations =>
-      LmLabsLocalization.translations *
+      LmLabsAppLocalization.translations *
       CounterLocalization.translations *
       JokesLocalization.translations *
       SettingsLocalization.translations *

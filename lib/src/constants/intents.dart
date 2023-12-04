@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:lm_labs_app/src/constants/platform.dart';
+import 'package:lm_labs_utils/constants.dart';
 
 class CloseAppAction extends Action<CloseAppIntent> {
   @override
