@@ -7,7 +7,7 @@ import 'package:lm_labs_app/src/constants/platform.dart';
 class CloseAppAction extends Action<CloseAppIntent> {
   @override
   Future<void> invoke(covariant CloseAppIntent intent) async {
-    if (kIsDesktop) {
+    if (LLPlatform.isDesktop) {
       exit(0);
     } else {
       await SystemNavigator.pop();

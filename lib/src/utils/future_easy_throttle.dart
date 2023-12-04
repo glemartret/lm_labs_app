@@ -5,29 +5,23 @@ import 'package:lm_labs_app/src/utils/extensions/completer_extension.dart';
 typedef FutureEasyThrottleCallback = Future<void> Function();
 
 class FutureEasyThrottle {
-  static final Map<String, _FutureEasyThrottleOperation> _operations = {};
-  static final Map<String, Completer> _completers = {};
+  static final Map<String, (_FutureEasyThrottleOperation, Completer)>
+      _operations = {};
 
   /// Cancels any active throttle with the given [tag].
   static void cancel(String tag) {
-    _operations[tag]?.timer.cancel();
+    _operations[tag]?.$1.timer.cancel();
+    _operations[tag]?.$2.tryComplete();
     _operations.remove(tag);
-
-    _completers[tag]?.completeIfNotCompleted();
-    _completers.remove(tag);
   }
 
   /// Cancels all active throttles.
   static void cancelAll() {
     for (final operation in _operations.values) {
-      operation.timer.cancel();
+      operation.$1.timer.cancel();
+      operation.$2.tryComplete();
     }
     _operations.clear();
-
-    for (final completer in _completers.values) {
-      completer.completeIfNotCompleted();
-    }
-    _completers.clear();
   }
 
   /// Returns the number of active throttles
@@ -46,30 +40,31 @@ class FutureEasyThrottle {
     FutureEasyThrottleCallback onExecute, {
     FutureEasyThrottleCallback? onAfter,
   }) {
-    _completers[tag] ??= Completer();
-
     final throttled = _operations.containsKey(tag);
     if (throttled) {
-      return _completers[tag]!.future;
+      return _operations[tag]!.$2.future;
     }
 
-    _operations[tag] = _FutureEasyThrottleOperation(
-      onExecute,
-      Timer(duration, () {
-        _operations[tag]?.timer.cancel();
-        final removed = _operations.remove(tag);
+    _operations[tag] = (
+      _FutureEasyThrottleOperation(
+        onExecute,
+        Timer(duration, () {
+          _operations[tag]?.$1.timer.cancel();
+          final removed = _operations.remove(tag);
 
-        removed?.onAfter?.call();
-      }),
-      onAfter: onAfter,
+          removed?.$1.onAfter?.call();
+        }),
+        onAfter: onAfter,
+      ),
+      Completer(),
     );
 
     onExecute().then((_) {
-      _completers[tag]?.completeIfNotCompleted();
-      _completers.remove(tag);
+      _operations[tag]?.$2.tryComplete();
+      _operations.remove(tag);
     });
 
-    return _completers[tag]?.future ?? Future.value();
+    return _operations[tag]?.$2.future ?? Future.value();
   }
 }
 

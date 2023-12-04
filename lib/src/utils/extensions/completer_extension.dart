@@ -1,9 +1,12 @@
 import 'dart:async';
 
 extension CompleterX on Completer {
-  void completeIfNotCompleted([FutureOr<dynamic>? value]) {
+  bool tryComplete([FutureOr<dynamic>? value]) {
     if (!isCompleted) {
       complete(value);
+      return true;
     }
+
+    return false;
   }
 }

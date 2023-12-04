@@ -2,10 +2,14 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 
-final kIsAndroid = !kIsWeb && Platform.isAndroid;
-final kIsDesktop = kIsLinux || kIsMacOS || kIsWindows;
-final kIsIOS = !kIsWeb && Platform.isIOS;
-final kIsLinux = !kIsWeb && Platform.isLinux;
-final kIsMacOS = !kIsWeb && Platform.isMacOS;
-final kIsMobile = kIsAndroid || kIsIOS;
-final kIsWindows = !kIsWeb && Platform.isWindows;
+/// Web safe version of [Platform].
+class LLPlatform {
+  static final bool isWindows = !kIsWeb && Platform.isWindows;
+  static final bool isAndroid = !kIsWeb && Platform.isAndroid;
+  static final bool isIOS = !kIsWeb && Platform.isIOS;
+  static final bool isLinux = !kIsWeb && Platform.isLinux;
+  static final bool isMacOS = !kIsWeb && Platform.isMacOS;
+
+  static final bool isDesktop = isLinux || isMacOS || isWindows;
+  static final bool isMobile = isAndroid || isIOS;
+}

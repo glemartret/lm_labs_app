@@ -8,29 +8,22 @@ typedef FutureFutureEasyDebounceCallback = Future<void> Function();
 
 /// A static class for handling method call debouncing.
 class FutureEasyDebounce {
-  static final Map<String, _FutureEasyDebounceOperation> _operations = {};
-  static final Map<String, Completer> _completers = {};
+  static final Map<String, (_FutureEasyDebounceOperation, Completer)>
+      _operations = {};
 
   /// Cancels any active debounce operation with the given [tag].
   static void cancel(String tag) {
-    _operations[tag]?.timer.cancel();
+    _operations[tag]?.$1.timer.cancel();
+    _operations[tag]?.$2.tryComplete();
     _operations.remove(tag);
-
-    _completers[tag]?.completeIfNotCompleted();
-    _completers.remove(tag);
   }
 
   /// Cancels all active debouncers.
   static void cancelAll() {
     for (final operation in _operations.values) {
-      operation.timer.cancel();
+      operation.$1.timer.cancel();
     }
     _operations.clear();
-
-    for (final completer in _completers.values) {
-      completer.completeIfNotCompleted();
-    }
-    _completers.clear();
   }
 
   /// Returns the number of active debouncers (debouncers that haven't yet
@@ -52,34 +45,34 @@ class FutureEasyDebounce {
     Duration duration,
     FutureFutureEasyDebounceCallback onExecute,
   ) {
-    _completers[tag] ??= Completer();
-
     if (duration == Duration.zero) {
-      _operations[tag]?.timer.cancel();
-      _operations.remove(tag);
+      _operations[tag]?.$1.timer.cancel();
 
       onExecute().then((_) {
-        _completers[tag]?.completeIfNotCompleted();
-        _completers.remove(tag);
+        _operations[tag]?.$2.tryComplete();
+        _operations.remove(tag);
       });
     } else {
-      _operations[tag]?.timer.cancel();
+      _operations[tag]?.$1.timer.cancel();
 
-      _operations[tag] = _FutureEasyDebounceOperation(
-        onExecute,
-        Timer(duration, () {
-          _operations[tag]?.timer.cancel();
-          _operations.remove(tag);
+      _operations[tag] = (
+        _FutureEasyDebounceOperation(
+          onExecute,
+          Timer(duration, () {
+            _operations[tag]?.$1.timer.cancel();
+            _operations.remove(tag);
 
-          onExecute().then((_) {
-            _completers[tag]?.completeIfNotCompleted();
-            _completers.remove(tag);
-          });
-        }),
+            onExecute().then((_) {
+              _operations[tag]?.$2.tryComplete();
+              _operations.remove(tag);
+            });
+          }),
+        ),
+        Completer(),
       );
     }
 
-    return _completers[tag]?.future ?? Future.value();
+    return _operations[tag]?.$2.future ?? Future.value();
   }
 
   /// Fires the callback associated with [tag] immediately. This does not
@@ -87,14 +80,12 @@ class FutureEasyDebounce {
   /// cancel the debounce timer, you must first call `fire(tag)` and
   /// then `cancel(tag)`.
   static Future<void> fire(String tag) {
-    _completers[tag] ??= Completer();
-
-    _operations[tag]?.callback().then((_) {
-      _completers[tag]?.completeIfNotCompleted();
-      _completers.remove(tag);
+    _operations[tag]?.$1.callback().then((_) {
+      _operations[tag]?.$2.tryComplete();
+      _operations.remove(tag);
     });
 
-    return _completers[tag]?.future ?? Future.value();
+    return _operations[tag]?.$2.future ?? Future.value();
   }
 }
 
