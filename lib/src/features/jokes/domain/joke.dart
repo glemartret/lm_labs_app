@@ -4,7 +4,7 @@ part 'joke.freezed.dart';
 part 'joke.g.dart';
 
 @freezed
-class Joke with _$Joke {
+sealed class Joke with _$Joke {
   const factory Joke({
     required String joke,
     required int id,

@@ -293,8 +293,8 @@ packages:
     dependency: "direct dev"
     description:
       path: "."
-      ref: "v0.0.3"
-      resolved-ref: "6aca871c0de7714ae4eab3158f1f3678d271376d"
+      ref: latest
+      resolved-ref: d311a0a5cfb28f29be245873be6a1c993f953e0d
       url: "git@github.com:glemartret/extreme_flutter_lints.git"
     source: git
     version: "0.0.3"
@@ -546,11 +546,11 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: "v1.0.0+1"
-      resolved-ref: d37d8001c110f46ed6c52962efe68addd47f652a
+      ref: latest
+      resolved-ref: "1689232330d7bff4aa53984ceda59279ce42cca5"
       url: "git@github.com:glemartret/lm_labs_utils.git"
     source: git
-    version: "1.0.0+1"
+    version: "1.0.0+4"
   logging:
     dependency: transitive
     description:

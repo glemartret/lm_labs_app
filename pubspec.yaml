@@ -26,7 +26,7 @@ dependencies:
   lm_labs_utils:
     git:
       url: git@github.com:glemartret/lm_labs_utils.git
-      ref: v1.0.0+1
+      ref: latest
   riverpod_annotation: ^2.3.3
   shared_preferences: ^2.2.2
 
@@ -36,7 +36,7 @@ dev_dependencies:
   extreme_flutter_lints:
     git:
       url: git@github.com:glemartret/extreme_flutter_lints.git
-      ref: v0.0.3
+      ref: latest
   flutter_native_splash: ^2.3.6
   flutter_test:
     sdk: flutter
