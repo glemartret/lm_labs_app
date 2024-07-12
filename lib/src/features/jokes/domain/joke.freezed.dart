@@ -12,7 +12,7 @@ part of 'joke.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Joke _$JokeFromJson(Map<String, dynamic> json) {
   return _Joke.fromJson(json);
@@ -23,8 +23,12 @@ mixin _$Joke {
   String get joke => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
 
+  /// Serializes this Joke to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Joke
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $JokeCopyWith<Joke> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -46,6 +50,8 @@ class _$JokeCopyWithImpl<$Res, $Val extends Joke>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Joke
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -82,6 +88,8 @@ class __$$JokeImplCopyWithImpl<$Res>
   __$$JokeImplCopyWithImpl(_$JokeImpl _value, $Res Function(_$JokeImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Joke
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -128,11 +136,13 @@ class _$JokeImpl implements _Joke {
             (identical(other.id, id) || other.id == id));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, joke, id);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Joke
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$JokeImplCopyWith<_$JokeImpl> get copyWith =>
@@ -156,8 +166,11 @@ abstract class _Joke implements Joke {
   String get joke;
   @override
   int get id;
+
+  /// Create a copy of Joke
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$JokeImplCopyWith<_$JokeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

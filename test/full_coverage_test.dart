@@ -4,7 +4,7 @@ import 'package:lm_labs_app/main.dart';
 import 'package:lm_labs_app/src/constants/endpoints.dart';
 import 'package:lm_labs_app/src/constants/intents.dart';
 import 'package:lm_labs_app/src/features/counter/presentation/counter.i18n.dart';
-import 'package:lm_labs_app/src/features/counter/presentation/counter_provider.dart';
+import 'package:lm_labs_app/src/features/counter/application/counter_provider.dart';
 import 'package:lm_labs_app/src/features/counter/presentation/counter_view.dart';
 import 'package:lm_labs_app/src/features/home/presentation/home.i18n.dart';
 import 'package:lm_labs_app/src/features/home/presentation/home_view.dart';

@@ -28,10 +28,10 @@ Future<void> initApp(InitAppRef ref) async {
   });
 
   // await for all initialization code to be complete before returning
-  await Future.wait([
+  await [
     // // Firebase init
     // Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform),
     // // list of providers to be warmed up
     ref.watch(asyncSharedPreferencesProvider.future),
-  ]);
+  ].wait;
 }

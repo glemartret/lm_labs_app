@@ -35,8 +35,8 @@ class MyApp extends ConsumerWidget {
       // depending on the user's locale.
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
       supportedLocales: const [
-        Locale('en', ''), // English, no country code
-        Locale('fr', ''), // French, no country code
+        Locale('en'), // English, no country code
+        Locale('fr'), // French, no country code
       ],
 
       title: 'LM Labs App',
