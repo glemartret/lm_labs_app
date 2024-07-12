@@ -30,7 +30,7 @@ class HomeView extends ConsumerWidget {
           crossAxisSpacing: 8,
           children: [
             GridTile(
-              child: LLTappable(
+              child: LLTappable.expand(
                 onTap: () async =>
                     ref.router.push(const CounterRoute().location),
                 child: Card(
@@ -40,7 +40,7 @@ class HomeView extends ConsumerWidget {
               ),
             ),
             GridTile(
-              child: LLTappable(
+              child: LLTappable.expand(
                 onTap: () async => ref.router.push(const JokesRoute().location),
                 child: Card(
                   margin: EdgeInsets.zero,
@@ -49,7 +49,7 @@ class HomeView extends ConsumerWidget {
               ),
             ),
             GridTile(
-              child: LLTappable(
+              child: LLTappable.expand(
                 onTap: () async =>
                     ref.router.push(const SampleItemListRoute().location),
                 child: Card(

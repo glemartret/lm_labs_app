@@ -6,7 +6,7 @@ part of 'jokes_repository.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$jokeHash() => r'46addc438b83062712d623c0b8c802dbeeff0dcd';
+String _$jokeHash() => r'05e51873e28f674621ff1c8e7c224541af727d3b';
 
 /// See also [joke].
 @ProviderFor(joke)

@@ -3,8 +3,8 @@ import 'package:lm_labs_utils/localization.dart';
 // ignore_for_file: lines_longer_than_80_chars
 
 // Search Strings without .i18n '(?!\.i18n)[\n\w\d\s.]*?'(?!\.i18n)(?!\n\.i18n)
-extension LmLabsAppLocalization on String {
-  static final _t = Translations('en') +
+extension RunnerLocalization on String {
+  static final _t = Translations.byText('en') +
       {
         'en': '',
         'fr': '',

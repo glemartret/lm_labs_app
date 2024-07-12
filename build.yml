@@ -2,11 +2,15 @@ targets:
   $default:
     builders:
       freezed:
+        options:
+          fallback_union: default
         generate_for:
           include:
             - "lib/src/**/domain/**.dart"
 
       json_serializable:
+        options:
+          explicit_to_json: true
         generate_for:
           include:
             - "lib/src/**/domain/**.dart"

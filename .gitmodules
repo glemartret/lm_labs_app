@@ -1,6 +1,0 @@
-[submodule "packages/lm_labs_utils"]
-	path = packages/lm_labs_utils
-	url = git@github.com:glemartret/lm_labs_utils.git
-[submodule "packages/extreme_flutter_lints"]
-	path = packages/extreme_flutter_lints
-	url = git@github.com:glemartret/extreme_flutter_lints.git

@@ -7,7 +7,7 @@ import 'package:lm_labs_app/src/localization/i18n.dart';
 
 // Search Strings without .i18n '(?!\.i18n)[\n\w\d\s.]*?'(?!\.i18n)(?!\n\.i18n)
 extension HomeLocalization on String {
-  static final _t = Translations('en') +
+  static final _t = Translations.byText('en') +
       {
         'en': 'Home',
         'fr': 'Accueil',
@@ -26,7 +26,7 @@ extension HomeLocalization on String {
       };
 
   static Translations get translations =>
-      LmLabsAppLocalization.translations *
+      RunnerLocalization.translations *
       CounterLocalization.translations *
       JokesLocalization.translations *
       SettingsLocalization.translations *
