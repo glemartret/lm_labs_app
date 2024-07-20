@@ -58,3 +58,9 @@ extension $SampleItemDetailsRouteExtension on SampleItemDetailsRoute {
 
   void replace(BuildContext context) => context.replace(location);
 }
+
+// **************************************************************************
+// RoutesGenerator
+// **************************************************************************
+
+List<RouteBase> get $sampleFeatureRoutes => $appRoutes;

@@ -31,3 +31,9 @@ extension $CounterRouteExtension on CounterRoute {
 
   void replace(BuildContext context) => context.replace(location);
 }
+
+// **************************************************************************
+// RoutesGenerator
+// **************************************************************************
+
+List<RouteBase> get $counterRoutes => $appRoutes;

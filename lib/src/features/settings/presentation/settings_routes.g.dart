@@ -31,3 +31,9 @@ extension $SettingsRouteExtension on SettingsRoute {
 
   void replace(BuildContext context) => context.replace(location);
 }
+
+// **************************************************************************
+// RoutesGenerator
+// **************************************************************************
+
+List<RouteBase> get $settingsRoutes => $appRoutes;

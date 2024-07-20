@@ -31,3 +31,9 @@ extension $JokesRouteExtension on JokesRoute {
 
   void replace(BuildContext context) => context.replace(location);
 }
+
+// **************************************************************************
+// RoutesGenerator
+// **************************************************************************
+
+List<RouteBase> get $jokesRoutes => $appRoutes;

@@ -31,3 +31,9 @@ extension $HomeRouteExtension on HomeRoute {
 
   void replace(BuildContext context) => context.replace(location);
 }
+
+// **************************************************************************
+// RoutesGenerator
+// **************************************************************************
+
+List<RouteBase> get $homeRoutes => $appRoutes;

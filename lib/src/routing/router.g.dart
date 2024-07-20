@@ -6,7 +6,7 @@ part of 'router.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$routerHash() => r'f9e5f8b808889b0253600e3b4b53ab2095e2a9d2';
+String _$routerHash() => r'8d3b495829b3cc4eb0d4fce6c057122025cbe100';
 
 /// See also [router].
 @ProviderFor(router)
