@@ -410,6 +410,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.2.0"
+  gettext_parser:
+    dependency: transitive
+    description:
+      name: gettext_parser
+      sha256: "9565c9dd1033ec125e1fbc7ccba6c0d2d753dd356122ba1a17e6aa7dc868f34a"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.0"
   glob:
     dependency: transitive
     description:
@@ -466,6 +474,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.15.4"
+  http:
+    dependency: transitive
+    description:
+      name: http
+      sha256: b9c29a161230ee03d3ccf545097fccd9b87a5264228c5d348202e0f0c28f9010
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.2.2"
   http_multi_server:
     dependency: transitive
     description:
@@ -486,18 +502,18 @@ packages:
     dependency: "direct main"
     description:
       name: i18n_extension
-      sha256: "35ec0e5017600c567c39ab21d4e1126baa6dc61bcfc265dafab2b3cd1c062d94"
+      sha256: "01b943ea532783c5945e658583d098d6f60db2a3177b9f382f010bd583853e59"
       url: "https://pub.dev"
     source: hosted
-    version: "13.0.2"
+    version: "15.0.0"
   i18n_extension_core:
     dependency: transitive
     description:
       name: i18n_extension_core
-      sha256: f45157bcd04d4fd88811e8e7c104a66ffbf77d16a6cf8526197c30cb78cbf1c4
+      sha256: "0b6411bcb5fd31141fc7bc5f0eaf2c81e8f898a6d8b9e90a33126945089a5a14"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.6"
+    version: "5.0.0"
   image:
     dependency: transitive
     description:
@@ -598,10 +614,10 @@ packages:
     dependency: "direct main"
     description:
       name: lm_labs_utils
-      sha256: "9274db9424e84240241f6ec8e45e1212a27df65def3a82899885f30039cac296"
+      sha256: fe71900ff32cd39c9cde3d5c89d88e8d76fc06b5ea80a9186aa74304fa154fc7
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.2"
+    version: "1.1.3"
   logging:
     dependency: transitive
     description:

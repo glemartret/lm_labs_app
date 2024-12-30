@@ -22,7 +22,7 @@ dependencies:
   freezed_annotation: ^2.4.3
   go_router: ^14.6.2
   hooks_riverpod: ^2.5.1
-  i18n_extension: ^13.0.2
+  i18n_extension: ^15.0.0
   json_annotation: ^4.9.0
   lm_labs_utils: ^1.1.2
   riverpod_annotation: ^2.3.5
