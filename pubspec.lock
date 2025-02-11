@@ -194,10 +194,10 @@ packages:
     dependency: "direct main"
     description:
       name: connectivity_plus
-      sha256: e0817759ec6d2d8e57eb234e6e57d2173931367a865850c7acea40d4b4f9c27d
+      sha256: "04bf81bb0b77de31557b58d052b24b3eee33f09a6e7a8c68a3e247c7df19ec27"
       url: "https://pub.dev"
     source: hosted
-    version: "6.1.1"
+    version: "6.1.3"
   connectivity_plus_platform_interface:
     dependency: transitive
     description:
@@ -282,18 +282,18 @@ packages:
     dependency: "direct main"
     description:
       name: dio
-      sha256: "5598aa796bbf4699afd5c67c0f5f6e2ed542afc956884b9cd58c306966efc260"
+      sha256: "253a18bbd4851fecba42f7343a1df3a9a4c1d31a2c1b37e221086b4fa8c8dbc9"
       url: "https://pub.dev"
     source: hosted
-    version: "5.7.0"
+    version: "5.8.0+1"
   dio_web_adapter:
     dependency: transitive
     description:
       name: dio_web_adapter
-      sha256: "36c5b2d79eb17cdae41e974b7a8284fec631651d2a6f39a8a2ff22327e90aeac"
+      sha256: e485c7a39ff2b384fa1d7e09b4e25f755804de8384358049124830b04fc4f93a
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.1"
+    version: "2.1.0"
   easy_debounce:
     dependency: "direct main"
     description:
@@ -364,10 +364,10 @@ packages:
     dependency: "direct dev"
     description:
       name: flutter_native_splash
-      sha256: "1152ab0067ca5a2ebeb862fe0a762057202cceb22b7e62692dcbabf6483891bb"
+      sha256: "7062602e0dbd29141fb8eb19220b5871ca650be5197ab9c1f193a28b17537bc7"
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.3"
+    version: "2.4.4"
   flutter_riverpod:
     dependency: transitive
     description:
@@ -410,6 +410,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.2.0"
+  gettext_parser:
+    dependency: transitive
+    description:
+      name: gettext_parser
+      sha256: "9565c9dd1033ec125e1fbc7ccba6c0d2d753dd356122ba1a17e6aa7dc868f34a"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.0"
   glob:
     dependency: transitive
     description:
@@ -422,18 +430,18 @@ packages:
     dependency: "direct main"
     description:
       name: go_router
-      sha256: "2fd11229f59e23e967b0775df8d5948a519cd7e1e8b6e849729e010587b46539"
+      sha256: "04539267a740931c6d4479a10d466717ca5901c6fdfd3fcda09391bbb8ebd651"
       url: "https://pub.dev"
     source: hosted
-    version: "14.6.2"
+    version: "14.8.0"
   go_router_builder:
     dependency: "direct dev"
     description:
       name: go_router_builder
-      sha256: "3425b72dea69209754ac6b71b4da34165dcd4d4a2934713029945709a246427a"
+      sha256: "63a1ebd575411216599055ec203014964b8e2b5af8f3b2e501447f87b492200b"
       url: "https://pub.dev"
     source: hosted
-    version: "2.7.1"
+    version: "2.7.5"
   graphs:
     dependency: transitive
     description:
@@ -466,6 +474,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.15.4"
+  http:
+    dependency: transitive
+    description:
+      name: http
+      sha256: fe7ab022b76f3034adc518fb6ea04a82387620e19977665ea18d30a1cf43442f
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.3.0"
   http_multi_server:
     dependency: transitive
     description:
@@ -486,18 +502,18 @@ packages:
     dependency: "direct main"
     description:
       name: i18n_extension
-      sha256: "35ec0e5017600c567c39ab21d4e1126baa6dc61bcfc265dafab2b3cd1c062d94"
+      sha256: "3ed32c4681e50597408c3180f7c2ba7e343a62b35a4a024bc6d2a764d375b008"
       url: "https://pub.dev"
     source: hosted
-    version: "13.0.2"
+    version: "15.0.4"
   i18n_extension_core:
     dependency: transitive
     description:
       name: i18n_extension_core
-      sha256: f45157bcd04d4fd88811e8e7c104a66ffbf77d16a6cf8526197c30cb78cbf1c4
+      sha256: "7923af27a4f643a21d5aea5203bed4859d42c9d38c08939e22d6d10f1fa4afb5"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.6"
+    version: "5.0.1"
   image:
     dependency: transitive
     description:
@@ -582,10 +598,10 @@ packages:
     dependency: "direct dev"
     description:
       name: lm_labs_flutter_lints
-      sha256: "79e03e864e4f7ef09f0441b86ee35d8e2241cd1a198e48895106c530a061dce6"
+      sha256: "9188a4fef9a2f823e4a3b6255d2fc97c117d719ca70f6e77aa5c8e3edef546d7"
       url: "https://pub.dev"
     source: hosted
-    version: "0.2.0"
+    version: "0.2.1"
   lm_labs_generator:
     dependency: "direct dev"
     description:
@@ -598,10 +614,10 @@ packages:
     dependency: "direct main"
     description:
       name: lm_labs_utils
-      sha256: "9274db9424e84240241f6ec8e45e1212a27df65def3a82899885f30039cac296"
+      sha256: fe71900ff32cd39c9cde3d5c89d88e8d76fc06b5ea80a9186aa74304fa154fc7
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.2"
+    version: "1.1.3"
   logging:
     dependency: transitive
     description:
@@ -862,10 +878,10 @@ packages:
     dependency: "direct main"
     description:
       name: shared_preferences
-      sha256: "3c7e73920c694a436afaf65ab60ce3453d91f84208d761fbd83fc21182134d93"
+      sha256: "846849e3e9b68f3ef4b60c60cf4b3e02e9321bc7f4d8c4692cf87ffa82fc8a3a"
       url: "https://pub.dev"
     source: hosted
-    version: "2.3.4"
+    version: "2.5.2"
   shared_preferences_android:
     dependency: transitive
     description:
