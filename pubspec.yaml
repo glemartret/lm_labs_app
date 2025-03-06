@@ -20,7 +20,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   freezed_annotation: ^2.4.4
-  go_router: ^14.8.0
+  go_router: ^14.8.1
   hooks_riverpod: ^2.6.1
   i18n_extension: ^15.0.4
   json_annotation: ^4.9.0
@@ -35,7 +35,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   freezed: ^2.5.8
-  go_router_builder: ^2.8.0
+  go_router_builder: ^2.8.2
   json_serializable: ^6.9.4
   lm_labs_flutter_lints: ^0.3.0
   lm_labs_generator: ^0.0.2
